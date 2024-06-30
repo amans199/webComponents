@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="dist/myCard.js"></script>
+    <style>
+        body {
+            max-width: 80vw;
+            margin: auto;
+        }
+
+        body>section {
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        button {
+            background: lightblue;
+            padding: .5rem 1rem;
+            text-transform: capitalize;
+            border: 1px solid grey;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+
+    <script>
+        const useContext = {
+            clicks: 0
+        }
+
+        const handleClickingAction = () => {
+            useContext.clicks++;
+            document.querySelectorAll('my-card').forEach(card => card.setAttribute('clicks', useContext.clicks));
+        };
+    </script>
+
+</head>
+
+<body>
+    <h1>Web Components</h1>
+    <section>
+        <my-card clicks="0" title-color="white">
+            <h2 slot="title">test title</h2>
+            <p>test desc</p>
+            <button onclick="handleClickingAction()"> Click </button>
+        </my-card>
+
+        <my-card clicks="0" title-color="Pink">
+            <h2 slot="title">test title</h2>
+            <p>test desc</p>
+        </my-card>
+
+    </section>
+
+
+</body>
+
+</html>

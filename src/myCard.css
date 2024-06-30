@@ -1,0 +1,25 @@
+.my-card {
+    border: 1px solid grey;
+    border-radius: 4px;
+    padding: 1rem;
+    display: inline-block;
+    margin: 0.5rem;
+    width: 200px;
+    height: 250px;
+    background: teal;
+    position: relative;
+}
+[name="title"] {
+    color: darkblue;
+    text-transform: capitalize;
+    color: var(--headline-color, darkblue);
+}
+
+#button-clicked {
+    position: absolute;
+    bottom: 0;
+}
+
+#button-clicked:not(.show) {
+    display: none;
+}
